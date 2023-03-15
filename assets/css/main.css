@@ -73,18 +73,6 @@
   --style-border-forever: 2px solid var(--heo-lighttext);
 }
 
-/*
-* 魔改自Time主题，海洋淳维护
-* 
-* @package OceanPlog
-* @author ocean
-* @version 1.2.0
-* @link https://oceanchun.com/	
-Multiverse by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-*/
 ::-webkit-scrollbar {
   /*滚动条整体样式*/
   width: 5px;
@@ -108,7 +96,7 @@ li {
   list-style-type:none;
 }
 
-.icon-plog {
+.icon-zmki {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
@@ -131,7 +119,7 @@ li {
 }
 
 @media screen and (max-width: 1221px) {
-  .plog_wap {
+  .zmki_wap {
     display: none;
   }
 
