@@ -1,41 +1,6 @@
 <?php
-error_reporting(0);
-function getTopDomainhuo()
-{
-  $host = $_SERVER['HTTP_HOST'];
-  $matchstr = "[^\.]+\.(?:(" . $str . ")|\w{2}|((" . $str . ")\.\w{2}))$";
-  if (preg_match("/" . $matchstr . "/ies", $host, $matchs)) {
-    $domain = $matchs['0'];
-  } else {
-    $domain = $host;
-  }
-  return $domain;
-}
-$domain = getTopDomainhuo();
-$check_host = 'http://update.php';
-$client_check = $check_host . '?a=client_check&u=' . $_SERVER['HTTP_HOST'];
-$check_message = $check_host . '?a=check_message&u=' . $_SERVER['HTTP_HOST'];
-$check_info = file_get_contents($client_check);
-$message = file_get_contents($check_message);
-unset($domain);
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form)
 {
-  if ($check_info == '1') {
-    echo '<font color=red>' . $message . '</font>';
-    die;
-  }
-  $data = json_decode(file_get_contents('https://plog.oceanchun.com/usr/themes/time/releases.json'), true);
-  $message = $data['tag_name'];
-  //当前版本号
-  $selfmessage = '1.0';
-  if ($selfmessage == $message) {
-    echo  'Plog&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp当前版本：' . 'v' . $selfmessage . "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" . '最新版本:' . 'v' . $message;
-  } else  if ($selfmessage > $message) {
-    echo  'Plog&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp当前版本：' . 'v' . $selfmessage . "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" . '最新版本:' . 'v' . $message;
-  } else  if ($selfmessage < $message) {
-    echo  'Plog&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp当前版本：' . 'v' . $selfmessage . "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" . '发现新版本:' . '<span style="color:red;"><b>v ' . $message . '</b></span>&nbsp&nbsp请更新，<a href="https://github.com/oceanchun/OceanPlog/releases" target="_blank">新版本特性</a>';
-  }
   //首页名称
   $IndexName = new Typecho_Widget_Helper_Form_Element_Text('IndexName', NULL, 'OceanPlog', _t('首页的名称(必填)'), _t('输入你的首页显示的名称'));
   $form->addInput($IndexName);
