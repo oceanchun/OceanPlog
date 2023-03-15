@@ -1,7 +1,7 @@
 <center>
 
-![OceanPlog](screenshot.png)
-
+<img src='screenshot.pmg'/>
+ 
 </center>
 
 -----
