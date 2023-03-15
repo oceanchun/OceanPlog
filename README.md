@@ -1,6 +1,6 @@
 <center>
 
-<img src='screenshot.pmg'/>
+<img src='./screenshot.pmg'/>
  
 </center>
 
