@@ -7,7 +7,7 @@
  * <script>var plogversion="v1.3";function update_detec(){var container=document.getElementById("OceanPlog");if(!container){return}var ajax=new XMLHttpRequest();container.style.display="block";ajax.open("get","https://api.github.com/repos/oceanchun/OceanPlog/releases/latest");ajax.send();ajax.onreadystatechange=function(){if(ajax.readyState===4&&ajax.status===200){var obj=JSON.parse(ajax.responseText);var newest=obj.tag_name;if(newest>plogversion){container.innerHTML="发现新主题版本："+obj.name+'。下载地址：<a href="'+obj.zipball_url+'">点击下载</a>'+"<br>您目前的版本:"+String(plogversion)+"。"+'<a target="_blank" href="'+obj.html_url+'">查看新版亮点</a>'}else{container.innerHTML="您目前的版本:"+String(plogversion)+"。您目前使用的是最新版主题。"}}}};update_detec();</script>
  * @package OceanPlog
  * @author ocean
- * @version 1.3
+ * @version v1.3
  * @link https://oceanchun.com/
  */
 ?>
@@ -42,7 +42,7 @@
             <span class="discription"><?php $this->options->plogabouts() ?></span>
 						<nav>
 							<ul>
-							    <li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-plog plog_dh plog_wap" aria-hidden="true"><use xlink:href="#icon-plog-ziyuan-copy"></use></svg></a></li>
+							    <li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-zmki zmki_dh zmki_wap" aria-hidden="true"><use xlink:href="#icon-zmki-ziyuan-copy"></use></svg></a></li>
                 <li class='nav-item'><a class="icon solid fa-info-circle nav-item-name">分类</a><?php \Widget\Metas\Category\Rows::alloc()->listCategories('wrapClass=nav-item-child'); ?></li>
 								
 								<li><a href="#footer">关于<a class="iconfont icon-guanyu" rel="noopener nofollow"/a></a></li>
