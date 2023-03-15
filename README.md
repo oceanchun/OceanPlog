@@ -1,8 +1,8 @@
-<center>
+<div align="center">
 
 <img src='screenshot.png'/>
  
-</center>
+</div>
 
 -----
 
@@ -15,6 +15,6 @@
  
 ### 使用方法
 `
-- 下载源码放到Typecho文件目录->usr->themes，到后台启用即可
-- 具体内容请到撰写文章页面查看
+> 下载源码放到Typecho文件目录->usr->themes，到后台启用即可
+> 具体内容请到撰写文章页面查看
 `
