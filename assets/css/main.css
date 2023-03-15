@@ -74,12 +74,12 @@
 }
 
 /*
-* 一个基于Typecho的相册模板。前端采用开源模板Multiverse，请尊重劳动成果  你可以在<a href="https://www.zmki.cn">钻芒博客</a>获得更多关于此皮肤的信息
+* 魔改自Time主题，海洋淳维护
 * 
-* @package Time
-* @author zmki
-* @version 1.0.0
-* @link https://www.zmki.cn/	
+* @package OceanPlog
+* @author ocean
+* @version 1.2.0
+* @link https://oceanchun.com/	
 Multiverse by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -108,7 +108,7 @@ li {
   list-style-type:none;
 }
 
-.icon-zmki {
+.icon-plog {
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
@@ -116,20 +116,22 @@ li {
   overflow: hidden;
 }
 
-.zmki_px {
+.plog_px {
   border: 0;
-  height: 100%;
+  height: 98%;
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 98%;
   object-fit: cover;
   cursor: pointer;
   outline: 0px;
+  border-radius: 20px;
+  margin: 5px;
 }
 
 @media screen and (max-width: 1221px) {
-  .zmki_wap {
+  .plog_wap {
     display: none;
   }
 
@@ -145,7 +147,7 @@ li {
 
 /*手机端适配  常规尺寸*/
 @media (max-width:768px) {
-  .zmki_px {
+  .plog_px {
     background-image: url(../img/20200212-6dafa53ecf4e3.gif);
     background-size: 100% 100%;
   }
@@ -153,7 +155,7 @@ li {
 
 /*iphone X 适配*/
 @media only screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) {
-  .zmki_px {
+  .plog_px {
     background-image: url(../img/20200212-38ce26bb0bd0d.gif);
     background-size: 100% 100%;
   }
@@ -162,7 +164,7 @@ li {
 /*iphone 6/7/8 适配*/
 @media only screen and (device-width:375px) and (device-height:667px) {
 
-  .zmki_px {
+  .plog_px {
     background-image: url(../img/20200212-e056a5f2914d6.gif);
     background-size: 100% 100%;
   }
@@ -532,8 +534,9 @@ h1 {
 }
 
 h2 {
-  font-size: 2.25em;
+  font-size: 1.25em;
   line-height: 1;
+  color: greenyellow;
 }
 
 h3 {
@@ -1215,6 +1218,25 @@ ul.actions.fit.stacked {
 }
 
 /* Icons */
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1678869806083') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-QQ:before {
+  content: "\e667";
+}
+
+
+
 
 ul.icons {
   cursor: default;
@@ -1238,6 +1260,7 @@ ul.icons li .iconfont:before {
   margin: auto;
   display: contents;
 }
+
 
 
 ul.icons li .iconfont {
@@ -1625,11 +1648,12 @@ body.touch .poptrox-popup .nav-next {
   padding: 4px 6px;
   border-radius: 8px;
   background: var(--heo-black-op);
-  font-size: 12px;
+  font-size: 18px;
   color: var(--heo-fontcolor);
   transition: 0.3s;
   z-index: 1;
   margin:  12px 0 0 12px;
+  font-weight: bold;
 }
 
 .tag-categorys a:hover {
@@ -2016,12 +2040,13 @@ body.is-preload #header {
 
 #main .thumb>h2 {
   pointer-events: none;
-  bottom: 1.875em;
+  bottom: 0.875em;
   font-size: 0.8em;
-  left: 2.1875em;
+  left: 1.1875em;
   margin: 0;
   position: absolute;
   z-index: 1;
+  color: darkorange;
 }
 
 #main .thumb>p {

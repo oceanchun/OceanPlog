@@ -1,3 +1,6 @@
+<?php $fields = $this->widget('Widget_Options')->fields; ?>
+<?php $i = 0; ?>
+
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
  <?php $this->need('sidebar.php'); ?>

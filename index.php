@@ -1,10 +1,12 @@
 <?php
 /**
- * 一款相册主题，Plus系列目前由Heo维护
- * @package TimePlus
- * @author zhheo
- * @version 2.4
- * @link https://zhheo.com/
+ * 一款相册主题，魔改自Time主题，高度自定义体验，由海洋淳维护
+ * 支持所有远程图片，支持附件多文件上传，
+ * 复制链接为原图片链接
+ * @package OceanPlog
+ * @author ocean
+ * @version 1.2
+ * @link https://oceanchun.com/
  */
 ?>
 <!DOCTYPE html>
@@ -21,6 +23,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<?php $this->options->AppleIcon(); ?>" >
     <link rel="icon" href="<?php $this->options->IconUrl() ?>">
 		<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('assets/css/main.css'); ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('assets/css/iconfont/iconfont.css'); ?>" />
 		<link rel="stylesheet" type="text/css" href="<?php $this->options->themeUrl('assets/css/noscript.css'); ?>" />
 		<noscript><link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/noscript.css'); ?>" /></noscript>
 		<link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/main.css'); ?>" />
@@ -31,12 +34,13 @@
 	<body class="is-preload">
   <header id="header">
             <a href="<?php $this->options->siteUrl(); ?>"><img class="site-logo" src="<?php $this->options->IconUrl(); ?>"></a>
-						<h1><a href="<?php $this->options->siteUrl(); ?>"><strong><?php $this->options->zmkiabout() ?></strong></h1></a>
-            <span class="discription"><?php $this->options->zmkiabouts() ?></span>
+						<h1><a href="<?php $this->options->siteUrl(); ?>"><strong><?php $this->options->plogabout() ?></strong></h1></a>
+            <span class="discription"><?php $this->options->plogabouts() ?></span>
 						<nav>
 							<ul>
+							    <li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-plog plog_dh plog_wap" aria-hidden="true"><use xlink:href="#icon-plog-ziyuan-copy"></use></svg></a></li>
                 <li class='nav-item'><a class="icon solid fa-info-circle nav-item-name">分类</a><?php \Widget\Metas\Category\Rows::alloc()->listCategories('wrapClass=nav-item-child'); ?></li>
-								<li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-zmki zmki_dh zmki_wap" aria-hidden="true"><use xlink:href="#icon-zmki-ziyuan-copy"></use></svg></a></li>
+								
 								<li><a href="#footer">关于</a></li>
 							</ul>
 						</nav>
@@ -46,17 +50,32 @@
 				<!-- Header -->
 					<!-- Main -->
 			<div id="main" >	
-			
-				<?php while($this->next()): ?>
-				   <article class="thumb img-area">
-				    <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->img();?><?php $this->options->zmki_sy()?>" >
-				   		<img class="zmki_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->img();?><?php $this->options->zmki_ys()?>"   />
-				   	</a> 
+			    <?php while($this->next()): 
+			    if ($this->fields->articleCopyright == 'show') {
+			        if ($this->fields->img <> null){ ?>
+				        <article class="thumb img-area">
+				        <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->img();?><?php $this->options->plogsy()?>" >
+				   	    <img class="plog_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->img();?><?php $this->options->plogys()?>"   />
+				   	    </a> 
 						<h2><?php $this->title() ?></h2>
 						<p><?php $this->content('Continue Reading...'); ?></p>
-            <li class="tag-categorys"><?php $this->category(','); ?></li>
-				   </article>
-				<?php endwhile; ?>
+                        <li class="tag-categorys"><?php $this->category(','); ?></li>
+				    </article>
+				    <?php }?>
+				    <?php for ($i=1; $i<=1004; $i++){
+                        $imgN='img'.$i;
+                        if ($this->fields->{$imgN} <> null){
+                        ?>
+				            <article class="thumb img-area">
+				            <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->$imgN();?><?php $this->options->plogsy()?>" >
+				   		    <img class="plog_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->$imgN();?><?php $this->options->plogys()?>"   />
+				   	        </a> 
+						    <h2><?php $this->title() ?></h2>
+						    <p><?php $this->content('Continue Reading...'); ?></p>
+                            <li class="tag-categorys"><?php $this->category(','); ?></li>
+				        </article>
+				   <?php }; };}?>
+			<?php endwhile; ?>
 			</div> 
 	<body>
  				<!-- Footer -->
@@ -72,14 +91,17 @@
 									<h2>联系我</h2>
 									<ul class="icons">	
                     <li><a href="<?php $this->options->xxhome()?>" target="_blank" class="iconfont icon-shouye" rel="noopener nofollow"><span class="label">首页</span></a></li>
-						        <li><a href="<?php $this->options->xxweibo()?>"  target="_blank" class="iconfont icon-weibo" rel="noopener nofollow"><span class="label">微博</span></a></li>
-                    <li><a href="<?php $this->options->xxgithub()?> "  target="_blank" class="iconfont icon-github" rel="noopener nofollow"><span class="label">GitHub</span></a></li>
+					<li><a href="https://weibo.com/u/<?php $this->options->xxweibo()?>"  target="_blank" class="iconfont icon-weibo" rel="noopener nofollow"><span class="label">微博</span></a></li>
+                    <li><a href="https://github.com/<?php $this->options->xxgithub()?> "  target="_blank" class="iconfont icon-github" rel="noopener nofollow"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://res.abeim.cn/api/qq/?qq=<?php $this->options->xxqq()?>"  target="_blank" class="iconfont icon-QQ" rel="noopener nofollow"><span class="label">QQ</span></a></li>
+                    <li><a href="mailto:<?php $this->options->xxemail()?>"  target="_blank" class="iconfont icon-email" rel="noopener nofollow"><span class="label">Email</span></a></li>
+                    <li><a href="https://t.me/<?php $this->options->xxtelegram()?>"  target="_blank" class="iconfont icon-telegram" rel="noopener nofollow"><span class="label">Telegram</span></a></li>
 										</ul>
 								</section> 
 								<span style="color: #b5b5b5; font-size: 0.8em;">
 									<?php $this->options->cnzz()?>
 								<p class="copyright">
-									&copy; 设计 ZHHEO & ZMKI 主题：<a href="https://github.com/zhheo/TimePlus" target="_blank" rel="noopener nofollow">TimePlus</a>. ICP备案号:<a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><?php $this->options->icp()?></a>
+									Copyright&nbsp;&copy;&nbsp;2023&nbsp;<a href="https://oceanchun.com" target="_blank" rel="noopener nofollow"><?php $this->options->Name()?>&nbsp;</a>By&nbsp;<?php $this->options->auth()?><br>Plog&nbsp;<a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><?php $this->options->icp()?></a>
 								</p>
 							</div>
 							</div>
@@ -103,11 +125,11 @@ function checkImgs() {
       index = i;
     }
   }
-  // Array.from(imgs).forEach(el => {
-  //   if (isInSight(el)) {
-  //     loadImg(el);
-  //   }
-  // })
+//   Array.from(imgs).forEach(el => {
+//      if (isInSight(el)) {
+//       loadImg(el);
+//      }
+//   })
 }
 
 function loadImg(el) {
