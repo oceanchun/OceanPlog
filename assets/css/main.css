@@ -104,7 +104,7 @@ li {
   overflow: hidden;
 }
 
-.plog_px {
+.zmki_px {
   border: 0;
   height: 98%;
   left: 0;
@@ -135,7 +135,7 @@ li {
 
 /*手机端适配  常规尺寸*/
 @media (max-width:768px) {
-  .plog_px {
+  .zmki_px {
     background-image: url(../img/20200212-6dafa53ecf4e3.gif);
     background-size: 100% 100%;
   }
@@ -143,7 +143,7 @@ li {
 
 /*iphone X 适配*/
 @media only screen and (device-width:375px) and (device-height:812px) and (-webkit-device-pixel-ratio:3) {
-  .plog_px {
+  .zmki_px {
     background-image: url(../img/20200212-38ce26bb0bd0d.gif);
     background-size: 100% 100%;
   }
@@ -152,7 +152,7 @@ li {
 /*iphone 6/7/8 适配*/
 @media only screen and (device-width:375px) and (device-height:667px) {
 
-  .plog_px {
+  .zmki_px {
     background-image: url(../img/20200212-e056a5f2914d6.gif);
     background-size: 100% 100%;
   }
@@ -401,6 +401,8 @@ body {
 html {
   box-sizing: border-box;
 }
+
+
 
 *,
 *:before,
@@ -1256,7 +1258,7 @@ ul.icons li .iconfont {
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background: var(--heo-fontcolor);
+  background: var(--heo-pink);
   display: flex;
   align-items: center;
   justify-content: center;

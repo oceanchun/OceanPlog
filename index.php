@@ -4,16 +4,14 @@
  * 支持所有远程图片，支持附件多文件上传，
  * 复制链接为原图片链接
  * <div class="OceanPlog"><a style="width:fit-content;text-decoration:none;" id="OceanPlog">版本检测中..</div>&nbsp;</div><style>.OceanPlog{margin-top: 5px;}.OceanPlog a{background: #ff5a8f;padding: 5px;color: #fff;}</style>
- * <script>var plogversion="v1.3";function update_detec(){var container=document.getElementById("OceanPlog");if(!container){return}var ajax=new XMLHttpRequest();container.style.display="block";ajax.open("get","https://api.github.com/repos/oceanchun/OceanPlog/releases/latest");ajax.send();ajax.onreadystatechange=function(){if(ajax.readyState===4&&ajax.status===200){var obj=JSON.parse(ajax.responseText);var newest=obj.tag_name;if(newest>plogversion){container.innerHTML="发现新主题版本："+obj.name+'。下载地址：<a href="'+obj.zipball_url+'">点击下载</a>'+"<br>您目前的版本:"+String(plogversion)+"。"+'<a target="_blank" href="'+obj.html_url+'">查看新版亮点</a>'}else{container.innerHTML="您目前的版本:"+String(plogversion)+"。您目前使用的是最新版主题。"}}}};update_detec();</script>
+ * <script>var plogversion="v1.4";function update_detec(){var container=document.getElementById("OceanPlog");if(!container){return}var ajax=new XMLHttpRequest();container.style.display="block";ajax.open("get","https://api.github.com/repos/oceanchun/OceanPlog/releases/latest");ajax.send();ajax.onreadystatechange=function(){if(ajax.readyState===4&&ajax.status===200){var obj=JSON.parse(ajax.responseText);var newest=obj.tag_name;if(newest>plogversion){container.innerHTML="发现新主题版本："+obj.name+'。下载地址：<a href="'+obj.zipball_url+'">点击下载</a>'+"<br>您目前的版本:"+String(plogversion)+"。"+'<a target="_blank" href="'+obj.html_url+'">查看新版亮点</a>'}else{container.innerHTML="您目前的版本:"+String(plogversion)+"。您目前使用的是最新版主题。"}}}};update_detec();</script>
  * @package OceanPlog
  * @author ocean
- * @version v1.3
+ * @version 1.4
  * @link https://oceanchun.com/
  */
 ?>
 <!DOCTYPE html>
-<!--OceanPlog-->
-<!--publish time:3/15/2023/18:07:12-->
 <html>
 	<head>
 		<title><?php $this->options->IndexName(); ?> - <?php $this->options->Indexdict() ?>	</title>
@@ -38,14 +36,14 @@
 	<body class="is-preload">
   <header id="header">
             <a href="<?php $this->options->siteUrl(); ?>"><img class="site-logo" src="<?php $this->options->IconUrl(); ?>"></a>
-						<h1><a href="<?php $this->options->siteUrl(); ?>"><strong><?php $this->options->plogabout() ?></strong></h1></a>
-            <span class="discription"><?php $this->options->plogabouts() ?></span>
+						<h1><a href="<?php $this->options->siteUrl(); ?>"><strong><?php $this->options->zmkiabout() ?></strong></h1></a>
+            <span class="discription"><?php $this->options->zmkiabouts() ?></span>
 						<nav>
 							<ul>
 							    <li><a type="button" id="fullscreen" class="btn btn-default visible-lg visible-md" alt="切换全屏"><svg  class="icon-zmki zmki_dh zmki_wap" aria-hidden="true"><use xlink:href="#icon-zmki-ziyuan-copy"></use></svg></a></li>
                 <li class='nav-item'><a class="icon solid fa-info-circle nav-item-name">分类</a><?php \Widget\Metas\Category\Rows::alloc()->listCategories('wrapClass=nav-item-child'); ?></li>
 								
-								<li><a href="#footer">关于<a class="iconfont icon-guanyu" rel="noopener nofollow"/a></a></li>
+								<li><a href="#footer">关于</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -58,8 +56,8 @@
 			    if ($this->fields->articleCopyright == 'show') {
 			        if ($this->fields->img <> null){ ?>
 				        <article class="thumb img-area">
-				        <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->img();?><?php $this->options->plogsy()?>" >
-				   	    <img class="plog_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->img();?><?php $this->options->plogys()?>"   />
+				        <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->img();?><?php $this->options->zmki_sy()?>" >
+				   	    <img class="zmki_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->img();?><?php $this->options->zmki_ys()?>"   />
 				   	    </a> 
 						<h2><?php $this->title() ?></h2>
 						<p><?php $this->content('Continue Reading...'); ?></p>
@@ -71,8 +69,8 @@
                         if ($this->fields->{$imgN} <> null){
                         ?>
 				            <article class="thumb img-area">
-				            <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->$imgN();?><?php $this->options->plogsy()?>" >
-				   		    <img class="plog_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->$imgN();?><?php $this->options->plogys()?>"   />
+				            <a class="image my-photo"  alt="loading" href="<?php echo $this->fields->$imgN();?><?php $this->options->zmki_sy()?>" >
+				   		    <img class="zmki_px  my-photo" onerror="this.src='<?php $this->options->themeUrl('assets/img/loading.gif'); ?>';this.onerror=null" data-src="<?php echo $this->fields->$imgN();?><?php $this->options->zmki_ys()?>"   />
 				   	        </a> 
 						    <h2><?php $this->title() ?></h2>
 						    <p><?php $this->content('Continue Reading...'); ?></p>
@@ -105,7 +103,13 @@
 								<span style="color: #b5b5b5; font-size: 0.8em;">
 									<?php $this->options->cnzz()?>
 								<p class="copyright">
-									Copyright&nbsp;&copy;&nbsp;2023&nbsp;<a href="https://oceanchun.com" target="_blank" rel="noopener nofollow"><?php $this->options->Name()?>&nbsp;</a>By&nbsp;<?php $this->options->auth()?><br>Plog&nbsp;<a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><?php $this->options->icp()?></a>
+									Copyright&nbsp;&copy;&nbsp;2023&nbsp;<a href="https://oceanchun.com" target="_blank" rel="noopener nofollow" /><?php echo $this->options->name() ?>&nbsp;</a>BY&nbsp;<?php echo $this->options->auth() ?><br><a href="http://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow"><?php $this->options->icp()?></a><br> <br> <br>
+									<?php  if (($this->options->xxyl1add && $this->options->xxyl1name) <>null ){?>
+									<a style="color:#fff;display: inline-block;background-color: #7f026d;padding: 4px;border-radius: 5px;width:70px;text-align:center;" href="<?php $this->options->xxyl1add()?>" target="_blank"><?php $this->options->xxyl1name()?></a><?php } ?>
+									<?php  if (($this->options->xxyl2add && $this->options->xxyl2name) <>null ){?>
+									<a style="color:#fff;display: inline-block;background-color: #288b46;padding: 4px;border-radius: 5px;width:70px;text-align:center;" href="<?php $this->options->xxyl2add()?>" target="_blank"><?php $this->options->xxyl2name()?></a><?php } ?>
+									<?php  if (($this->options->xxyl3add && $this->options->xxyl3name) <>null ){?>
+									<a style="color:#fff;display: inline-block;background-color: #007ec6;padding: 4px;border-radius: 5px;width:70px;text-align:center;" href="<?php $this->options->xxyl3add()?>" target="_blank"><?php $this->options->xxyl3name()?></a><?php } ?>
 								</p>
 							</div>
 							</div>

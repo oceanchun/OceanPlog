@@ -1,15 +1,17 @@
 <?php
+
 function themeConfig($form)
 {
+
   //首页名称
   $IndexName = new Typecho_Widget_Helper_Form_Element_Text('IndexName', NULL, 'OceanPlog', _t('首页的名称(必填)'), _t('输入你的首页显示的名称'));
   $form->addInput($IndexName);
-  $Name = new Typecho_Widget_Helper_Form_Element_Text('Name', NULL, '海洋淳', _t('关于里的名称'), _t('输入显示在BY前的名称'));
-  $form->addInput($Name);
-  $auth = new Typecho_Widget_Helper_Form_Element_Text('Name', NULL, 'OCEAN', _t('关于里的BY后'), _t('输入显示在BY后的名称'));
+  $name = new Typecho_Widget_Helper_Form_Element_Text('name', NULL, '海洋淳', _t('关于里的名称'), _t('输入显示在BY前的名称'));
+  $form->addInput($name);
+  $auth = new Typecho_Widget_Helper_Form_Element_Text('auth', NULL, 'OCEAN', _t('关于里的BY后'), _t('输入显示在BY后的名称'));
   $form->addInput($auth);
   //网站图标
-  $IconUrl = new Typecho_Widget_Helper_Form_Element_Text('IconUrl', NULL, '', _t('网站图标地址'), _t('输入网站的图标（建议200px宽度png）'));
+  $IconUrl = new Typecho_Widget_Helper_Form_Element_Text('IconUrl', NULL, 'https://yun.oceanchun.com/d/Drawingbed/web%E7%BA%A2%E8%89%B2%E5%A5%B3%E5%AD%A9.png?sign=1Aegb5D3hsWbe_3mJuqnN5i5UeQG80yFTtjcPr5KGxw=:0', _t('网站图标地址'), _t('输入网站的图标（建议200px宽度png）'));
   $form->addInput($IconUrl);
   //Apple网站图标
   $AppleIcon = new Typecho_Widget_Helper_Form_Element_Text('AppleIcon', NULL, '', _t('兼容Apple设备的图标'), _t('建议使用有背景无圆角矩形图标，在被iOS添加到书签或桌面后显示此图标（建议200px宽度png）'));
@@ -17,28 +19,42 @@ function themeConfig($form)
   //首页名称后缀（必填）
   $Indexdict = new Typecho_Widget_Helper_Form_Element_Text('Indexdict', NULL, '海洋淳', _t('首页的名称后缀(必填)'), _t('输入你的首页显示的名称后缀'));
   $form->addInput($Indexdict);
-  $plogabout = new Typecho_Widget_Helper_Form_Element_Text('plogabout', NULL, 'OceanPlog', _t('自定义底部前缀'), _t('输入你的首页底部栏前缀'));
-  $form->addInput($plogabout);
-  $plogabouts = new Typecho_Widget_Helper_Form_Element_Text('plogabouts', NULL, '乘风破浪会有时，直挂云帆济沧海！', _t('自定义底部后缀'), _t('输入你的首页底部栏后缀'));
-  $form->addInput($plogabouts);
+  $zmkiabout = new Typecho_Widget_Helper_Form_Element_Text('zmkiabout', NULL, 'OceanPlog', _t('自定义底部前缀'), _t('输入你的首页底部栏前缀'));
+  $form->addInput($zmkiabout);
+  $zmkiabouts = new Typecho_Widget_Helper_Form_Element_Text('zmkiabouts', NULL, '乘风破浪会有时，直挂云帆济沧海！', _t('自定义底部后缀'), _t('输入你的首页底部栏后缀'));
+  $form->addInput($zmkiabouts);
   //大logo
   $Biglogo = new Typecho_Widget_Helper_Form_Element_Text('Biglogo', NULL, '这里填写你的介绍。', _t('关于-详细介绍'), _t('底栏展开后的详细介绍，可以使用html标签'));
   $form->addInput($Biglogo);
-  $plogys = new Typecho_Widget_Helper_Form_Element_Text('plogys', NULL, '', _t('缩略图-图片处理规则名称-(优化选项,选填)'), _t('需要带自定义分隔符;使用oss图片处理生成小缩略图可优化页面打开速度'));
-  $form->addInput($plogys);
-  $plogsy = new Typecho_Widget_Helper_Form_Element_Text('plogsy', NULL, '', _t('图片版权水印-图片处理规则名称-(优化选项,选填)'), _t('需要带自定义分隔符;此处可填写oss水印规则名称，默认对全部图片生效'));
-  $form->addInput($plogsy);
-  $xxhome = new Typecho_Widget_Helper_Form_Element_Text('xxhome', NULL, '', _t('Home'), _t('填写你的主页链接 http(s)://'));
+  $zmki_ys = new Typecho_Widget_Helper_Form_Element_Text('zmki_ys', NULL, '', _t('缩略图-图片处理规则名称-(优化选项,选填)'), _t('需要带自定义分隔符;使用oss图片处理生成小缩略图可优化页面打开速度'));
+  $form->addInput($zmki_ys);
+  $zmki_sy = new Typecho_Widget_Helper_Form_Element_Text('zmki_sy', NULL, '', _t('图片版权水印-图片处理规则名称-(优化选项,选填)'), _t('需要带自定义分隔符;此处可填写oss水印规则名称，默认对全部图片生效'));
+  $form->addInput($zmki_sy);
+  
+  $xxyl1name = new Typecho_Widget_Helper_Form_Element_Text('xxyl1name', NULL, '海洋淳', _t('友情链接1名称'), _t('填写你的友情链接名称,必须名称和链接都填才能显示，只填一个或豆不填则不显示，以下同理，建议这个别删除，给我留一个位置'));
+  $form->addInput($xxyl1name);
+  $xxyl1add = new Typecho_Widget_Helper_Form_Element_Text('xxyl1add', NULL, 'https://oceanchun.com', _t('友情链接1地址'), _t('填写你的友情链接地址 http(s)://'));
+  $form->addInput($xxyl1add);
+  $xxyl2name = new Typecho_Widget_Helper_Form_Element_Text('xxyl2name', NULL, '', _t('友情链接2名称'), _t('填写你的友情链接名称'));
+  $form->addInput($xxyl2name);
+  $xxyl2add = new Typecho_Widget_Helper_Form_Element_Text('xxyl2add', NULL, '', _t('友情链接2地址'), _t('填写你的友情链接地址 http(s)://'));
+  $form->addInput($xxyl2add);
+  $xxyl3name = new Typecho_Widget_Helper_Form_Element_Text('xxyl3name', NULL, '', _t('友情链接3名称'), _t('填写你的友情链接名称'));
+  $form->addInput($xxyl3name);
+  $xxyl3add = new Typecho_Widget_Helper_Form_Element_Text('xxyl3add', NULL, '', _t('友情链接3地址'), _t('填写你的友情链接地址 http(s)://'));
+  $form->addInput($xxyl3add);
+  
+  $xxhome = new Typecho_Widget_Helper_Form_Element_Text('xxhome', NULL, '', _t('主页'), _t('填写你的主页链接 http(s)://'));
   $form->addInput($xxhome);
-  $xxweibo = new Typecho_Widget_Helper_Form_Element_Text('xxweibo', NULL, '', _t('Weibo'), _t('填写你的微博号ID，链接就能看到ID'));
+  $xxweibo = new Typecho_Widget_Helper_Form_Element_Text('xxweibo', NULL, '', _t('微博'), _t('填写你的微博号ID，链接就能看到ID'));
   $form->addInput($xxweibo);
   $xxgithub = new Typecho_Widget_Helper_Form_Element_Text('xxgithub', NULL, '', _t('GitHub'), _t('填写你的GitHub账号名称'));
   $form->addInput($xxgithub);
   $xxqq = new Typecho_Widget_Helper_Form_Element_Text('xxqq', NULL, '', _t('QQ'), _t('填写你的QQ号码'));
   $form->addInput($xxqq);
-  $xxemail = new Typecho_Widget_Helper_Form_Element_Text('xxemail', NULL, '', _t('Email'), _t('填写你的邮箱地址'));
+  $xxemail = new Typecho_Widget_Helper_Form_Element_Text('xxemail', NULL, '', _t('邮箱'), _t('填写你的邮箱地址'));
   $form->addInput($xxemail);
-  $xxtelegram = new Typecho_Widget_Helper_Form_Element_Text('xxtelegram', NULL, '', _t('Telegram'), _t('填写你的TG地址'));
+  $xxtelegram = new Typecho_Widget_Helper_Form_Element_Text('xxtelegram', NULL, '', _t('飞机'), _t('填写你的TG地址'));
   $form->addInput($xxtelegram);
   $icp = new Typecho_Widget_Helper_Form_Element_Text('icp', NULL, '这里显示备案号', _t('ICP备案号'), _t('如果你在国内有备案，可在此处填写'));
   $form->addInput($icp);
