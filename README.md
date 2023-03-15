@@ -1,5 +1,8 @@
+<center>
+
 ![OceanPlog](screenshot.png)
 
+</center>
 -----
 
 ## OceanPlog For Typecho
