@@ -6,7 +6,7 @@
 
 -----
 
-## OceanPlog For Typecho
+## OceanPlog For Typecho 乘风破浪会有时，直挂云帆济沧海！
 
 ### 项目简介
 - 一款基于typecho的相册主题，改自TimePlus，高度自定义体验
