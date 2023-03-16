@@ -1,9 +1,11 @@
 <?php
 /**
  * Time前端基于Multiverse。由钻芒开发适配  你可以在<a href="https://www.zmki.cn/4953.html">钻芒博客</a>获得此模板更新信息。请保留底部版权。否则不欢迎使用<br><b>1.1.2更新说明</b>（打包时间:2020年2月12日02:38:28）<ul><li>原生js懒加载。完美提升加载速度</li><li>图片处理集成到后台，配合oss使用。【推荐】</li><li>增加全屏切换并美化侧边滚动条</li><li>后台新增cnzz等一些细小的功能及代码优化</li></ul>
+ * <div class="OceanPlog"><a style="width:fit-content;text-decoration:none;" id="OceanPlog">版本检测中..</div>&nbsp;</div><style>.OceanPlog{margin-top: 5px;}.OceanPlog a{background: #ff5a8f;padding: 5px;color: #fff;}</style>
+ * <script>var plogversion="v1.0";function update_detec(){var container=document.getElementById("OceanPlog");if(!container){return}var ajax=new XMLHttpRequest();container.style.display="block";ajax.open("get","https://api.github.com/repos/oceanchun/OceanPlog/releases/latest");ajax.send();ajax.onreadystatechange=function(){if(ajax.readyState===4&&ajax.status===200){var obj=JSON.parse(ajax.responseText);var newest=obj.tag_name;if(newest>plogversion){container.innerHTML="发现新主题版本："+obj.name+'。下载地址：<a href="'+obj.zipball_url+'">点击下载</a>'+"<br>您目前的版本:"+String(plogversion)+"。"+'<a target="_blank" href="'+obj.html_url+'">查看新版亮点</a>'}else{container.innerHTML="您目前的版本:"+String(plogversion)+"。您目前使用的是最新版主题。"}}}};update_detec();</script>
  * @package Time
  * @author zmki
- * @version 1.1.3
+ * @version v1.0
  * @link https://www.zmki.cn/
  */
 ?>
