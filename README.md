@@ -9,7 +9,7 @@
 ## OceanPlog For Typecho 乘风破浪会有时，直挂云帆济沧海！
 
 ### 项目简介
-- 一款基于typecho的相册主题，改自TimePlus，高度自定义体验
+- 一款基于typecho的相册主题，改自[TimePlus](https://github.com/zhheo/TimePlus)，高度自定义体验
 - 支持所有远程图片，支持附件多文件上传，
 - 复制链接为原图片链接
 
